@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Minha Página Simples</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      text-align: center;
+      padding: 20px;
+    }
+    .slideshow {
+      max-width: 600px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .slide {
+      position: absolute;
+      width: 100%;
+      height: auto;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    .slide.active {
+      opacity: 1;
+      z-index: 1;
+    }
+    .slide img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .caption {
+      position: absolute;
+      bottom: 20px;
+      left: 0;
+      width: 100%;
+      color: white;
+      font-size: 1.2em;
+      text-shadow: 0px 0px 10px rgba(0,0,0,0.7);
+      padding: 10px;
+      box-sizing: border-box;
+    }
+    #playBtn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+    #playBtn:hover {
+      background-color: #ff85c1;
+    }
+  </style>
+</head>
+<body>
+  <h1>Feliz dia dos Namorados!</h1>
+  <p>Nossos Momentos .</p>
+
+  <audio id="audio" loop>
+    <source src="musica.mp3" type="audio/mpeg">
+    Seu navegador não suporta a reprodução de áudio.
+  </audio>
+
+  <button id="playBtn">🎵 Tocar Música</button>
+
+  <div class="slideshow">
+    <div class="slide active">
+      <img src="foto1.png" alt="Foto 1">
+      <div class="caption">Seu sorriso é meu lugar favorito.</div>
+    </div>
+    <div class="slide">
+      <img src="foto2.png" alt="Foto 2">
+      <div class="caption">Em cada batida do meu coração, existe um pedaço seu.</div>
+    </div>
+    <div class="slide">
+      <img src="foto3.png" alt="Foto 3">
+      <div class="caption">Você é o meu sonho mais bonito.</div>
+    </div>
+    <div class="slide">
+      <img src="foto4.png" alt="Foto 4">
+      <div class="caption">Amar você é como respirar: impossível parar.</div>
+    </div>
+    <div class="slide">
+      <img src="foto5.png" alt="Foto 5">
+      <div class="caption">Nos teus olhos encontrei o meu lar.</div>
+    </div>
+    <div class="slide">
+      <img src="foto6.png" alt="Foto 6">
+      <div class="caption">Você é minha poesia favorita em forma de pessoa.</div>
+    </div>
+    <div class="slide">
+      <img src="foto7.png" alt="Foto 7">
+      <div class="caption">Cada segundo ao seu lado é um pedaço do paraíso.</div>
+    </div>
+    <div class="slide">
+      <img src="foto8.png" alt="Foto 8">
+      <div class="caption">Seu abraço é onde meu mundo faz sentido.</div>
+    </div>
+    <div class="slide">
+      <img src="foto9.png" alt="Foto 9">
+      <div class="caption">Você ilumina minha vida como nenhuma estrela faria.</div>
+    </div>
+    <div class="slide">
+      <img src="foto10.png" alt="Foto 10">
+      <div class="caption">Amar você é a minha maior certeza.</div>
+    </div>
+    <div class="slide">
+      <img src="foto11.png" alt="Foto 11">
+      <div class="caption">Seu amor é a melodia que embala meus dias.</div>
+    </div>
+    <div class="slide">
+      <img src="foto12.png" alt="Foto 12">
+      <div class="caption">Com você, todo dia é especial.</div>
+    </div>
+    <div class="slide">
+      <img src="foto13.png" alt="Foto 13">
+      <div class="caption">Você é o amor que sempre sonhei viver.</div>
+    </div>
+  </div>
+
+
+  
+
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    let index = 0;
+
+    setInterval(() => {
+      slides[index].classList.remove('active');
+      index = (index + 1) % slides.length;
+      slides[index].classList.add('active');
+    }, 4000);
+
+    document.getElementById('playBtn').addEventListener('click', () => {
+      const audio = document.getElementById('audio');
+      audio.play();
+    });
+  </script>
+</body>
+</html>
